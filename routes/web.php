@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/deposit','DollarController@index');
+
+
+Route::resource('deposit','DepositController');
+
+Route::get('login','AuthController@getLogin')->name('login');
+
+Route::post('login','AuthController@postLogin');
+Route::get('logout','AuthController@logout');
+
+
+
