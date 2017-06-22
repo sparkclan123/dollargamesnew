@@ -11,19 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 
 
-Route::resource('deposit','DepositController');
+Route::resource('/','DepositController');
 
-Route::get('login','AuthController@getLogin')->name('login');
+// Route::get('login','AuthController@getLogin')->name('login');
 
-Route::post('login','AuthController@postLogin');
-Route::get('logout','AuthController@logout');
+// Route::post('login','AuthController@postLogin');
+// Route::get('logout','AuthController@logout');
 
 
 
