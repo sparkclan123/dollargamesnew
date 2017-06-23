@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class AuthController extends Controller
 {
@@ -18,6 +19,7 @@ class AuthController extends Controller
       }else{
           abort(401);
       }
+    
     }
 
     public function logout(){
@@ -26,4 +28,41 @@ class AuthController extends Controller
         return redirect('deposit');
 
     }
+
+    public function register(){
+        return view('auths.register');
+        //return 'register';
+    }
+
+    public function store(Request $request)
+    {
+                //$input = request()->email;
+                //return $input;
+
+                $name = request('name');
+                $email = request('email');
+                $password = bcrypt(request('password'));
+                $status = request('status');  
+                  
+                DB::table('users')->insert([
+                    'name' => $name,
+                    'email' => $email,
+                    'password' => $password,
+                    'status' => $status
+
+                ]);
+                $users = DB::table('users')
+                ->paginate(5);
+
+
+                return redirect('deposit');
+
+
+           
+
+
+            
+
+    }
+
 }

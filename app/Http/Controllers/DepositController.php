@@ -15,14 +15,14 @@ class DepositController extends Controller
      * @return \Illuminate\Http\Response
      */
 //ตัวล๊อกอินที่เชื่อมกับcontroller login กำหนดให้ถ้าเฉพาะหน้านั้นๆเข้าได้หรือไม่ได้
-// public function __construct(){
-//           $this->middleware('auth')
+ public function __construct(){
+          $this->middleware('auth')
 //           //เข้าไม่ได้เฉพาะ create edit
-//           ->only(['index','create', 'edit']);
+           ->only(['index','create', 'edit']);
 //          //เข้าได้หมดยกเว้นindex
 
 //          //->except(['index']);
-//      }
+    }
 
 
     public function index()
