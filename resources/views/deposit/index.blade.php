@@ -32,6 +32,7 @@
             <td> {{ $d->channeldeposit}}</td>
             <td> {{ $d->tel}}</td>
             <td> {{ $d->opinion}}</td>
+            
             <td><a href="/deposit/{{ $d ->id}}/edit" class="btn btn-primary" type="text" value="edit">Edit</a></td>
          </tr>
           

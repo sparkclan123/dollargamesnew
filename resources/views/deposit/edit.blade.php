@@ -13,7 +13,7 @@ $(function(){
 </script>
 
 
-          <form action="/deposit" method="post">
+          <form action="/deposit/{{$deposit -> id}}" method="post">
            {{ csrf_field() }}
             {{method_field('PUT')}}
             <div class="form-group">

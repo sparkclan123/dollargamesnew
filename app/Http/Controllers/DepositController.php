@@ -95,7 +95,11 @@ class DepositController extends Controller
      */
     public function edit($id)
     {
-        //
+        $deposit = DB::table('deposit')
+        ->where('id', $id)
+        ->first();
+
+    return view('deposit.edit',compact('deposit'));
     }
 
     /**
@@ -107,7 +111,33 @@ class DepositController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+                $rules = [
+                    'username'=> 'required',
+                    'balance'=> 'required',
+                    'bankdeposit'=> 'required',
+                    'accountnumberdeposit'=> 'required',
+                    'accontnamedeposit'=> 'required',
+                    'datetime'=> 'required',
+                    'channeldeposit'=> 'required',
+                    'tel'=> 'required',
+                    'opinion' => 'required'
+                ];
+
+                $input = request()->except(['_token','_method']);
+            //validate คือการกำหนดข้อมูลที่จะทำการบันทึกให้มีเงื่อนไขในการกรอก
+                $this->validate($request, $rules);
+
+            try{
+            DB::table('deposit')
+                ->where('id',$id)
+                ->update($input);
+                
+
+            return redirect('/deposit');
+            }
+            catch(Exception $d){
+                abort(500);
+            }
     }
 
     /**
