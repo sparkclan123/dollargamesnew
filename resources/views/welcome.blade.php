@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <title>DollarGames</title>
 
         <!-- Fonts -->
@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #f0f0f5;
+                color: #29293d;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -78,12 +78,14 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    DollarGames
-                </div>
+                <h1>Doller  Games</h1>
+<div class="container-fluid bg-1 text-center">
+    <img src="image/LSM2.png" class="img-responsive img-circle margin" style="display:inline"  width="350" >
+    <h3>DollarGames</h3>
+</div>
                 <div>กรุณาเลือกเมนูด้านล่าง</div>
 
-                <br><br><div class="links">
+                <div class="links">
                    <a href="/deposit">หน้าหลัก</a>
                   
                 </div>

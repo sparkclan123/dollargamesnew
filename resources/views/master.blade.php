@@ -23,7 +23,7 @@
         @section('content')
 
         @show
-        @include('barwith')
+       
     </div>
 
 </body>
